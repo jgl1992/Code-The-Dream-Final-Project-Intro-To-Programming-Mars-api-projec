@@ -1,5 +1,5 @@
-const tempUrl = "
-const conditionUrl = "
+const tempUrl = "'https://api.open-meteo.com/v1/forecast'
+
 async function getTemp(url) {
   try {
     const response = await fetch(url);
@@ -28,4 +28,22 @@ async function getTempInfo(hawaii) {
   let chooseParadise = document.querySelector(".paradise");
   let paradiseCard = document.createElement("img");
   console.log(`The paradise is: ${gameState.paradise}`);
+
+mport { fetchWeatherApi } from 'openmeteo';
+
+const params = {
+  latitude: 52.52,
+  longitude: 13.41,
+  current: 'temperature_2m,weather_code',
+  hourly: 'temperature_2m',
+  daily: 'weather_code,temperature_2m_max,temperature_2m_min'
+};
+const url = 'https://api.open-meteo.com/v1/forecast';
+const responses = await fetchWeatherApi(url, params);
+
+// Process the first location
+const response = responses[0];
+const current = response.current();
+console.log(`Current temperature: ${current.variables(0).value()}°C`);
+```
 
