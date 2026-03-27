@@ -57,7 +57,9 @@ body.main
 }
 
 /*JS */
-const tempUrl = "'https://api.open-meteo.com/v1/forecast'
+const tempFDisplay = document/getElementbyId('tempF');
+const descDisplay = document.getElementyId('desc');
+const conditionsView = document.getElementbyId('cond');
 
 async function getTemp(url) {
   try {
@@ -94,16 +96,9 @@ const current = response.current();
 console.log(`Current temperature: ${current.variables(0).value()}°C`);
 ```
 
-
-
-c
-const descDisplay = document.getElementById('description');
-
-
 async function getBoxWeather() {
     const city = cityInput.value.trim();
     if (!city) return;
-
     errorMsg.textContent = "";
     resultDiv.className = "result-hidden";
 
