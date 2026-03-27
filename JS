@@ -3,26 +3,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Paradise " />
+    <meta name="description" content="70 Windy" />
     <link rel="stylesheet" href="./index.css" />
-    <title>Marvel Paradise Players</title>
+    <title>70 Windy</title>
   </head>
   <body class="main-page">
-    <section class="player-screen">
-      <div class="player-content">
-        <h1>Marvel Paradise Players</h1>
+    <section class="weather-screen">
+      <div class="weather-content">
+        <h1>70 Windy</h1>
         <p>
-          Step into a paradise! Enjoy your paradise by finding the temperature and sunny condition. and indulge in paradises 1610B and 6160. 
-          Explore your own fantasy, build your family, and explore in-depth bliss.
+          Step into a windy heat! Enjoy your paradise by finding the temperature and windy condition. and indulge in paradises in Fahrenheit and Kelvin. 
+          Explore your own weather condition, build your jacket gear, and explore in-depth bliss exploring.
         </p>
         <button class="start-button">
-          <a href="./match.html">Find your temp!</a>
+          <a href="./temp.html">Let's get sweaty!</a>
         </button>
       </div>
     </section>
   </body>
 </html>
-
 
 /* CSS */
 html {
@@ -33,7 +32,6 @@ body {
   font-weight: 400;
 }
 body.main
-  background-image: url("images/reality/2.png");
   background-size: cover;
   background-position: center;
 }
@@ -47,18 +45,16 @@ body.main
   font-weight: 600;          
 }
 
-.craft-page-layout {
+.windy-page-layout {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto 1fr auto 1fr
   gap: 1rem;
 }
-.craft-page-layout .header-block {
+.windy-page-layout .header-block {
   grid-column: 1 / -1;     
   grid-row: 1;
 }
-
-
 
 /*JS */
 const tempUrl = "'https://api.open-meteo.com/v1/forecast'
@@ -88,19 +84,7 @@ async function getTempInfo(hawaii) {
     return null;
   }
 }
-  let chooseParadise = document.querySelector(".paradise");
-  let paradiseCard = document.createElement("img");
-  console.log(`The paradise is: ${gameState.paradise}`);
 
-mport { fetchWeatherApi } from 'openmeteo';
-
-const params = {
-  latitude: 52.52,
-  longitude: 13.41,
-  current: 'temperature_2m,weather_code',
-  hourly: 'temperature_2m',
-  daily: 'weather_code,temperature_2m_max,temperature_2m_min'
-};
 const url = 'https://api.open-meteo.com/v1/forecast';
 const responses = await fetchWeatherApi(url, params);
 
@@ -110,4 +94,28 @@ const current = response.current();
 console.log(`Current temperature: ${current.variables(0).value()}°C`);
 ```
 
-/*
+
+
+c
+const descDisplay = document.getElementById('description');
+
+
+async function getBoxWeather() {
+    const city = cityInput.value.trim();
+    if (!city) return;
+
+    errorMsg.textContent = "";
+    resultDiv.className = "result-hidden";
+
+    try {
+        // 1. Get ready for conditioner 
+const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code`;
+const weatherRes = await fetch(weatherUrl);
+const weatherData = await weatherRes.json();
+
+//2. Get ready for temp const celsius = weatherData.current.temperature_2m;
+
+
+
+      
+}
