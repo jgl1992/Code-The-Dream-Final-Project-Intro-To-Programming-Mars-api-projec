@@ -109,6 +109,32 @@ const weatherRes = await fetch(weatherUrl);
 const weatherData = await weatherRes.json();
 
 //2. Get ready for temp const celsius = weatherData.current.temperature_2m;
+Async function getWeather(latitude, longitude)
+{
+Try
+{
+/*build */
+Const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m`;
+/*fetch */
+Const response = await fetch(url);
+/*check 4 errorz */
+If(!response.ok {
+throw new ERROR (‘http error! Status: ${response.status});
+}
+/* parse Jason*/
+Const data = await response.json();
+/* result*/
+Console.log(“current weather:”);
+Console.log(‘temperature: ${data.current_weather.temperaturre});
+Console.log(‘wind speed: ${data.current_weather.windspeed} km/h);
+return data;
+} catch (error) {
+console.error(“error fetching weather”, error.message);
+getWeather( 41.314159, -89.6796
+
+
+
+
 
 
 
