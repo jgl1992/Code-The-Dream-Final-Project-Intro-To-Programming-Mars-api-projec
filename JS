@@ -119,14 +119,14 @@ Const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitu
 Const response = await fetch(url);
 /*check 4 errorz */
 If(!response.ok {
-throw new ERROR (‘http error! Status: ${response.status});
+throw new ERROR (`http error! Status: ${response.status});
 }
 /* parse Jason*/
 Const data = await response.json();
 /* result*/
 Console.log(“current weather:”);
-Console.log(‘temperature: ${data.current_weather.temperaturre});
-Console.log(‘wind speed: ${data.current_weather.windspeed} km/h);
+Console.log(`temperature: ${data.current_weather.temperaturre});
+Console.log(`wind speed: ${data.current_weather.windspeed} km/h);
 return data;
 } catch (error) {
 console.error(“error fetching weather”, error.message);
